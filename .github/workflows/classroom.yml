@@ -272,15 +272,15 @@ jobs:
           fi
 
       # create feedback pr
-      - name: Create Feedback PR
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          title: "Feedback"
-          body: ${{ steps.mto.outputs.body }}
-          base: feedback
-          head: ${{ needs.grade.outputs.default-branch-name }}
-        run: |
-          gh pr create --base "$base" --head "$head" --title "$title" --body "$body"
+      #- name: Create Feedback PR
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #    title: "Feedback"
+      #    body: ${{ steps.mto.outputs.body }}
+      #    base: feedback
+      #    head: ${{ needs.grade.outputs.default-branch-name }}
+      #  run: |
+      #    gh pr create --base "$base" --head "$head" --title "$title" --body "$body"
 
   # job to post feedback message in Feedback PR
   # Classroom will create the PR when assignment accepted. PR should be issue 1.
